@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+.container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size:x-large;
+   
+    font-family: 'Roboto', sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+.container:hover{
+    background-color: #ddd;
+    
+}
+.active {
+    .text {
+        color:#1D9BF0 !important;
+    }
+}
+.text:hover{
+    color: #1D9BF0 !important;
+}

@@ -1,0 +1,96 @@
+.container {
+    display: flex;
+   position: relative;
+
+    border: 1px solid rgba(0,0,0,0.1);
+    flex-direction: column;
+}
+.firstDiv {
+   
+    padding: 0.4rem;
+    align-items: center;
+    display: flex;
+   
+    gap: 0.5rem;
+   
+    font-size: 20px;
+}
+.firstDiv input {
+    width: 100%;
+    box-sizing: border-box;
+    padding:0.6rem;
+    border:none;
+    font-size: 20px;
+    overflow: wrap;
+   
+   
+    
+}
+.firstDiv form {
+    width: 100%;
+}
+.icon {
+   font-size: 50px !important;
+   color:#bbb;
+}
+.firstDiv input:focus {
+    outline:none;
+}
+.icons {
+    display: flex;
+    gap: 0.5rem;
+    
+    
+    color:#1D9BF0;
+}
+.secondDiv {
+    padding: 0.5rem;
+    display: flex;
+    
+    justify-content: space-between;
+}
+.secondDiv button {
+    color:white;
+    font-size: 15px;
+    width: fit-content;
+    background-color: #1D9BF0;
+    border-radius:25px;
+    padding: 0.4rem 0.8rem;
+}
+#selectImage {
+    display: none;
+}
+.iconHover:hover{
+    background-color: #ddd;
+   
+    border-radius: 10px;
+}
+.image {
+    max-width: 520px;
+    max-height: 400px;
+    display: block;
+    margin:0 auto;
+  
+}
+.outerPicker {
+    position:relative;
+   
+}
+.Picker{
+    position: absolute;
+    top:10px;
+    left:0px;
+    /* z-index:100; */
+}
+.displayUser {
+    position:absolute;
+    width:200px;
+    background-color:white;
+    height:200px;
+    overflow:scroll;
+   box-sizing: border-box;
+   padding: 0.2rem;
+    bottom: 0px;
+    box-shadow: 0 0 10px black;
+    transform: translate(0,100%);
+}

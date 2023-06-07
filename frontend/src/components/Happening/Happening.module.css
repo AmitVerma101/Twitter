@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.1rem;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.1);
+    gap:0.8rem;
+    background-color: #eee;
+    cursor:pointer;
+    overflow-y: scroll;
+    height: 80vh;
+}
+.container::-webkit-scrollbar {
+    display: none;
+  }

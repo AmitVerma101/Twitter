@@ -1,0 +1,33 @@
+.container {
+   
+    max-height: 100vh;
+   
+   
+    overflow: scroll;
+    border : 1px solid rgba(0,0,0,0.1);
+    
+}
+.component {
+    position:sticky;
+    top: 0;
+    background-color: white;
+}
+.container::-webkit-scrollbar {
+    display: none;
+  }
+.buttonContainer{
+    width: 100%;
+    
+    display: flex;
+    
+    
+}
+button {
+    border:none;
+    width: 100%;
+    background-color: white;
+}
+.container h3 {
+    margin-left:1rem;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,30 @@
+.container {
+    box-sizing: border-box;
+    position: relative;
+    padding: 0.4rem;
+    width: 100%;
+}
+.container input {
+    width: 100%;
+    font-size: 14px;
+    background-color: #EFF3F4;
+   border:none;
+    border-radius: 25px;
+    padding: 0.8rem 0.8rem;
+    box-sizing: border-box;
+}
+.container input:focus {
+    outline:none;
+}
+.displayUser {
+    position:absolute;
+    width:200px;
+    background-color:white;
+    height:200px;
+    overflow:scroll;
+   box-sizing: border-box;
+   padding: 0.2rem;
+    bottom: 0px;
+    box-shadow: 0 0 10px black;
+    transform: translate(0,100%);
+}

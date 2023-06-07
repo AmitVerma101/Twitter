@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+.container {
+  display: flex;
+  max-width:1300px;
+  margin-left:auto;
+  margin-right:auto;
+  font-family: 'Roboto', sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+.firstElement {
+  flex-basis:25%;
+  min-width:250px;
+  flex-grow:1;
+  flex-shrink:1;
+}
+.secondElement {
+  flex-basis:75%;
+  display: flex;
+  flex-grow:1;
+  flex-shrink:1;
+}
+.firstChild {
+  flex-basis:60%;
+  min-width: 400px;
+  flex-grow: 1;
+  flex-shrink:1;
+}
+.firstChild img {
+  max-height: 400px;
+  max-width:100%;
+}
+.secondChild {
+  flex-basis:40%;
+  flex-grow:1;
+  flex-shrink:1;
+}
+.firstMessageChild {
+  flex: 1 1 60%;
+  min-width:300px;
+}
+.secondMessageChild{
+  flex:1 1 40%;
+  min-width: 200px;
+}
+@media screen and (max-width:1000px){
+    .secondChild{
+      display: none;
+    }
+    .firstChild{
+     
+      flex: 0 0 80%;
+    }
+   
+}
+@media screen and (max-width:650px){
+  .firstElement{
+    display: none;
+  }
+}
+
+.twitterIcon {
+    color:#1D9BF0;
+    width:100px !important;
+    height:100px !important;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}

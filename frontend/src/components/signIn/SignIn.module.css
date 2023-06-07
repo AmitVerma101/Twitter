@@ -1,0 +1,52 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signIn {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 4rem;
+    width: 40%;
+    height: 60%;
+    background-color: white;
+}
+.signIn input {
+    display: block;
+    font-size:20px;
+    padding:0.4rem;
+    box-sizing: border-box;
+    
+    width: 100%;
+}
+.signIn p{
+    font-size: 18px;
+    
+}
+.link:hover {
+    text-decoration: underline;
+}
+.input {
+    margin-bottom:1rem;
+}
+.link {
+    
+    color: #1D9BF0;
+    text-decoration: none;
+}
+.loader {
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform: translate(-40px, -40px);
+    
+}
+.twitterIcon {
+    font-size:80px !important;
+    color:#1D9BF0;
+}
