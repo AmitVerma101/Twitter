@@ -8,8 +8,8 @@ export default function Happening() {
         let formData = new FormData()
         const test = async ()=>{
         let result = await axiosApiCall('http://localhost:4000/whoToFollow',formData);
-        console.log("printing the result in happening component")
-        console.log(result);
+        // console.log("printing the result in happening component")
+        // console.log(result);
         if(result.data.auth == true){
             setFollower(result.data.body)
         }

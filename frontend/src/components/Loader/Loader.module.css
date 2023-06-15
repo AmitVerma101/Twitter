@@ -1,0 +1,17 @@
+.container {
+
+    width:30px;
+    height:30px;
+    margin:0px auto;
+    border:2px solid #ddd;
+    border-radius: 50%;
+    border-top-color:black;
+    animation: loading 1s linear infinite;
+
+    
+}
+@keyframes loading {
+    from {transform: rotate(0turn)}
+    to {transform: rotate(1turn)}
+    
+}

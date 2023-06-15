@@ -17,7 +17,7 @@ export default function SearchBar(props) {
     let test =async ()=>{
       let formData = new FormData()
       
-      console.log(text)
+      // console.log(text)
       formData.append('username',text)
       if(text == ''){
         setShowUsername(false)
@@ -28,11 +28,11 @@ export default function SearchBar(props) {
         console.log("consoling result")
         console.log(result);
         if(result.data.auth == true){
-          console.log(result)
+          // console.log(result)
          
      
           setUsername(result.data.body)
-          console.log(username)
+          // console.log(username)
           setShowUsername(true)
           if(result.data.body.length == 0){
             setShowUsername(false)
@@ -58,8 +58,8 @@ export default function SearchBar(props) {
       <input type="text" placeholder='Search Twitter' value={text} onChange={(e)=>setText(e.target.value)} ref = {props.Focusing}/>
       {showUsername && <div className={styles.displayUser} >{
                   username && username.map((value)=>{
-                    console.log("consoling value in search bar")
-                    console.log(value)
+                    // console.log("consoling value in search bar")
+                    // console.log(value)
                     return (
                       <>
                      <div onClick={()=>Empty(value)} key={`search${value.u_id}`} style ={{border:'1px solid rgba(0,0,0,0.2)',padding:'0.5rem'}}>

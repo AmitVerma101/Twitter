@@ -463,5 +463,24 @@ const getHashTags =async(req,res)=>{
         res.json({auth:false});
     }
 }
+const fetchHashTags = async(req,res)=>{
+    let result = await AuthenticationDatabase.fetchHashTags();
+    if(result.message == 'success'){
+        res.json({auth:true,body:result.body})
+    }
+    else {
+        res.json({auth:false})
+    }
+}
+const hashRelatedPosts = async(req,res)=>{
+    let {hashTag,u_id} = req.body;
+    let result = await AuthenticationDatabase.fetchHashRelatedPosts(hashTag,u_id);
+    if(result.message == 'success'){
+        res.json({auth:true,body:result.body})
+    }
+    else {
+        res.json({auth:false});
+    }
+}
 
-module.exports = {getHashTags,signupPost,verificationCode,LoginPost,generateJwtToken,verifyCode,fillDetails,validateUsername,tweet,fetchForYouTweets,comment,whoToFollow,follow,Unfollow,addLike,removeLike,fetchComments,getUserNames,fetchTweets,fetchUserProfile,fetchProfileTweets,fetchProfileReplies,fetchProfileLikes,notifications,setMessage,getMessage,getUserChatters,followersTweets};
+module.exports = {hashRelatedPosts,fetchHashTags,getHashTags,signupPost,verificationCode,LoginPost,generateJwtToken,verifyCode,fillDetails,validateUsername,tweet,fetchForYouTweets,comment,whoToFollow,follow,Unfollow,addLike,removeLike,fetchComments,getUserNames,fetchTweets,fetchUserProfile,fetchProfileTweets,fetchProfileReplies,fetchProfileLikes,notifications,setMessage,getMessage,getUserChatters,followersTweets};

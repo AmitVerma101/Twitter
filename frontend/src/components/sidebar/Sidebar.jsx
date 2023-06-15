@@ -14,7 +14,7 @@ import TagIcon from "@mui/icons-material/Tag";
 import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import AuthContext from "../../Context/AuthUser";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { axiosApiCall } from "../../middlewares/axios";
+// import { axiosApiCall } from "../../middlewares/axios";
 
 export default function Sidebar() {
   const { user, setUser } = useContext(AuthContext);
@@ -40,11 +40,11 @@ export default function Sidebar() {
     navigate(`/notifications/${user.u_id}`);
   }
   function home() {
-    console.log("consoling in the home function");
+    // console.log("consoling in the home function");
     setSelected(1);
     navigate("/home");
   }
-  console.log(user.u_name);
+  // console.log(user.u_name);
     return (
       <>
         {user.u_name == undefined ? 
@@ -58,7 +58,11 @@ export default function Sidebar() {
                 icon={<HomeIcon className={styles.icon}/>}
                 text="Home"
               /></div></NavLink>
+              <NavLink to = '/explore' style={{textDecoration:'none',color:'black'}}>
+              <div  className={`${styles.element}`}>
                <SidebarComponent icon={<TagIcon/>} text="Explore"  />
+               </div>
+              </NavLink>
               <NavLink to = {`/notifications/${user.u_id}`} style={{textDecoration:'none',color:'black'}}>
                 <div  className={`${styles.element}`}>
              

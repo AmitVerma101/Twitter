@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import HashTagRelatedTweets from "./components/HashTag/HashTagRelatedTweets";
 import "./App.css";
 import Sidebar from "./components/sidebar/Sidebar";
 import "./App.css";
 import Feed from "./components/Feed/Feed";
-
+import HashContainer from "./components/HashTag/HashContainer";
 import { Outlet } from "react-router-dom";
 import Explore from "./components/Explore/Explore";
 import SignIn from "./components/signIn/SignIn";
@@ -104,7 +105,35 @@ const router = createBrowserRouter([
          <Template/>
           </>
         ),
-      }
+      },
+      {
+        path: "explore/:hashTag",
+        element: (
+          <>
+          
+          <div className="firstChild">
+            <HashTagRelatedTweets/>
+        </div>
+        <div className="secondChild">
+            <Explore />
+        </div>
+          </>
+        ),
+      },
+      {
+        path: 'explore',
+        element: (
+          <>
+          <div className="firstChild">
+             <HashContainer/>
+          </div>
+          <div className="secondChild">
+            <Explore/>
+          </div>
+          </>
+        )
+      },
+        
     ],
   },
   {
@@ -115,7 +144,7 @@ const router = createBrowserRouter([
     path: "/login",
     element: <SignIn />,
   },
-  {},
+ ,
 ]);
 
 function App() {

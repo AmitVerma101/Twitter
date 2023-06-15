@@ -1,16 +1,13 @@
 import React,{useState} from 'react'
 import ModeCommentTwoToneIcon from '@mui/icons-material/ModeCommentTwoTone';
-import LoopTwoToneIcon from '@mui/icons-material/LoopTwoTone';
+// import LoopTwoToneIcon from '@mui/icons-material/LoopTwoTone';
 import FavoriteBorderTwoToneIcon from '@mui/icons-material/FavoriteBorderTwoTone';
-import BarChartTwoToneIcon from '@mui/icons-material/BarChartTwoTone';
-import IosShareTwoToneIcon from '@mui/icons-material/IosShareTwoTone';
+// import BarChartTwoToneIcon from '@mui/icons-material/BarChartTwoTone';
+// import IosShareTwoToneIcon from '@mui/icons-material/IosShareTwoTone';
 import styles from './Post.module.css'
-// import CropOriginalIcon from '@mui/icons-material/CropOriginal';
-// import GifBoxIcon from '@mui/icons-material/GifBox';
-// import BallotIcon from '@mui/icons-material/Ballot';
-// import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
-import ScheduleIcon from '@mui/icons-material/Schedule';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+
+// import ScheduleIcon from '@mui/icons-material/Schedule';
+// import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { axiosApiCall } from '../../middlewares/axios';
 // import Button from '../Button/Button';
@@ -19,8 +16,7 @@ import { useNavigate } from 'react-router-dom';
 // import { convertLength } from '@mui/material/styles/cssUtils';
 
 export default function Post(props) {
-  // console.log("consoling the props in the post component")
-  // console.log(props)
+  
 const navigate = useNavigate();
 async function like(event,value){
   event.stopPropagation();

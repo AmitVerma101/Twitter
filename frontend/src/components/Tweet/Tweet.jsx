@@ -26,7 +26,9 @@ export default function Tweet(props) {
       let patternResult = regex.exec(arr[i]);
 
       if(patternResult!= null){
-            hashTag.push(arr[i]);
+        
+          hashTag.push(arr[i]);
+        
       }
     }
   console.log("Consoling the value of the hashTags available")
@@ -60,6 +62,7 @@ export default function Tweet(props) {
         console.log("consoling the response");
         console.log(response);
         if (response.data.auth == true) {
+          hashTag = []
           console.log("I am coming here");
           if (response.data.body != undefined) {
             console.log("consoling the props.tweet");
@@ -175,7 +178,7 @@ export default function Tweet(props) {
   const [text, setText] = useState("");
   const [emoji, setEmoji] = useState(false);
   const [mention, setMention] = useState([]);
-  const hashTag = []
+  let hashTag = []
   let [img, setImg] = useState("");
   const [username, setUsername] = useState([]);
   const [hashTags,setHashTags] = useState([])
@@ -208,6 +211,28 @@ export default function Tweet(props) {
     setText(`${ans} `);
     inp.current.focus();
     setShowUsername(false);
+  }
+
+
+  function addHashTag(value) {
+    value = value.hashtag;
+    // let arr = [...mention, value];
+    // console.log("consoling the arr of mentions");
+    // console.log(arr);
+    // setMention(arr);
+    // console.log("consoling the value");
+    // console.log(value);
+    let temp = text.lastIndexOf("#");
+    let ans = "";
+    ans = text.substring(0, temp);
+
+    // console.log("consoling the temp");
+    // console.log(temp);
+    ans += value;
+
+    setText(`${ans} `);
+    inp.current.focus();
+    setShowhashtag(false);
   }
   return (
     <>
@@ -254,7 +279,7 @@ export default function Tweet(props) {
                   return (
                     <>
                       <div id="hashId"
-                        onClick={() => addUsername(value)}
+                        onClick={() => addHashTag(value)}
                         style={{
                           border: "1px solid rgba(0,0,0,0.2)",
                           padding: "0.5rem",

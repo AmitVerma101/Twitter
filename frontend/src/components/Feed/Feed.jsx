@@ -6,16 +6,16 @@ import Post from '../posts/Post'
 
 import { axiosApiCall } from '../../middlewares/axios';
 export default function Feed() {
-function showTweet(value){
-  console.log("Inside showTweet");
-}
+// function showTweet(value){
+//   console.log("Inside showTweet");
+// }
 
 async function fetchData(){
   let formData = new FormData()
   formData.append('name','user');
    let response = await axiosApiCall('http://localhost:4000/fetchForYouTweets',formData);
-   console.log("consoling the response in fetchData")
-   console.log(response)
+  //  console.log("consoling the response in fetchData")
+  //  console.log(response)
    if(response.data.auth == true){
        setTweets([...response.data.body]);
    }
@@ -32,8 +32,8 @@ useEffect( () => {
     let formData = new FormData()
     formData.append('name','user');
      let response = await axiosApiCall('http://localhost:4000/fetchForYouTweets',formData);
-     console.log("consoling the response in fetchData")
-     console.log(response)
+    //  console.log("consoling the response in fetchData")
+    //  console.log(response)
      if(response.data.auth == true){
          setTweets([...response.data.body]);
      }
@@ -44,8 +44,8 @@ useEffect( () => {
     let formData = new FormData()
     formData.append('name','user');
      let response = await axiosApiCall('http://localhost:4000/followersTweets',formData);
-     console.log("consoling the response in fetchData")
-     console.log(response)
+    //  console.log("consoling the response in fetchData")
+    //  console.log(response)
      if(response.data.auth == true){
          setTweets([...response.data.body]);
      }

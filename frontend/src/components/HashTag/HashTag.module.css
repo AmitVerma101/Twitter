@@ -1,0 +1,20 @@
+.container {
+    z-index:150;
+    box-sizing: border-box;
+    padding:0.7rem;
+    border:1px solid #aaa;
+    margin-bottom: 0.3rem;
+    cursor: pointer;    
+}
+.container:hover {
+    color: var(--color);
+    background-color:#eee;
+    /* animation: increment 0.3s linear forwards; */
+}
+.container:visited {
+    background-color:#999;
+}
+/* @keyframes increment {
+    from {transform:scale(1)}
+    to {transform:scale(1.2)}
+} */

@@ -100,7 +100,7 @@ async function findHashTags(field, value) {
   try {
     
     let result = await client.query(
-      `select * from hashTag where ${field} like '${value}%';`
+      `select hashtag from hashTag where ${field} like '${value}%' group by ${field};`
     );
     // console.log("The result of the query in findUser is ");
   
@@ -503,9 +503,41 @@ async function fetchUserChatters(s_id){
   }
 }
 
+async function fetchHashTags(){
+  const client = await pool.connect();
+  try {
+        let result = await client.query(`select count(t_id),hashtag from hashTag group by hashTag;`)
+        return {message:'success',body:result.rows}
+      }
+  catch(e){
+      console.log("Error occur while inserting the message "+e );
+      return {message:'failure'}
+          }
+  finally {
+    client.release(true)
+  }
+}
+
+
+async function fetchHashRelatedPosts(hashTag,u_id){
+
+  const client = await pool.connect();
+  try {
+        let result = await client.query(`select e3.likes,e4.* from likeTable e3 right join (select e1.username,e1.u_name,e1.profilepic,e2.* from users e1 inner join (select * from tweets where t_id in (select t_id from hashTag where hashtag = '${hashTag}'))e2 on e1.u_id = e2.u_id)e4 on e3.t_id = e4.t_id and e3.u_id = ${u_id};`)
+        return {message:'success',body:result.rows}
+      }
+  catch(e){
+      console.log("Error occur while inserting the message "+e );
+      return {message:'failure'}
+          }
+  finally {
+    client.release(true)
+  }
+}
+
 
 module.exports = {
-  findHashTags, insertIntoUser,
+  fetchHashRelatedPosts,fetchHashTags,findHashTags, insertIntoUser,
   updateUser,
   findUser,
   updateUsers,

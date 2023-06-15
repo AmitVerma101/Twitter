@@ -37,10 +37,10 @@ router.post('/checkUserAuth',checkUserAuth)
 router.post('/fetchUserProfile',AuthenticateController.fetchUserProfile)
 router.post('/whoToFollow',AuthenticateController.whoToFollow);
 router.post('/follow',AuthenticateController.follow);
-
+router.post('/fetchHashTags',AuthenticateController.fetchHashTags);
 router.post('/fetchProfileTweets',AuthenticateController.fetchProfileTweets)
 router.post('/Unfollow',AuthenticateController.Unfollow);
-
+router.post('/hashRelatedPosts',AuthenticateController.hashRelatedPosts);
 //likes
 router.post('/addLike',AuthenticateController.addLike);
 router.post('/removeLike',AuthenticateController.removeLike);
